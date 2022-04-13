@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0  ;
+}
+
+#cabeza {
+    display: inline;
+    position: relative;
+    left: 1200px;
+   
+    }
+
+body {
+    background-color: bisque;
+}
+
+h1 {
+    display: inline-block;
+    position: relative;
+    font-family: 'Hurricane', cursive;
+    font-size: 80px;
+
+    
+
+}
+
+h1::after, h1::before  {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em;
+    transform:scale(0);
+    transition: all 0,2s ease-in;
+
+}
+
+h1:hover::after, h1:hover::before {
+    transform: scale(1);
+
+}
+
+h1::after {
+    left: -140px;
+}
+
+h1::before {
+    right: -140px;
+}
+
+h2 {
+    text-align: left;
+    font-family: 'Catamaran', sans-serif;
+
+}
+
+h2 {
+    text-align: left;
+    font-family: 'Catamaran', sans-serif;
+
+}
+
+
+.contenedor {
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "cabeza cabeza cabeza"
+                         "contenido contenido margen"
+                         "contenido contenido margen"
+                         "banner1 banner2 margen"
+                         "banner1 banner2 margen"
+  
+
+}
+
+.contenedor div,
+.contenedor .cabeza,
+.contenedor .contenido,
+.contenedor .margen{
+    padding: 20px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.contenedor .cabeza {
+   background-color: #12203e;
+   height: 50px;
+   padding: 30px;
+   color: white;
+
+
+}
+
+
+.cabeza {
+    grid-area: cabeza;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.contenedor .contenido {
+    grid-area: contenido;
+    color: black;
+
+    
+}
+    
+.contenedor .margen {
+    background-color: orange;
+    grid-area: margen; 
+    padding-left: 150px ;
+    
+    
+
+}
+
+.contenedor .banner1 {
+    grid-area: banner1;
+    background-color: #12203e;
+    color: white;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .banner2 {
+    grid-area: banner2;
+    background-color: #12203e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.localidades {
+    list-style-type: square;
+    text-align: justify;
+    padding: 20px;
+    margin: 10px;
+    
+}
+
+.localidades :hover {
+    background-color: grey;
+}
+
+
+@media screen and (max-width: 768px)
+{
+.contenedor {
+    grid-template-areas: "cabeza cabeza cabeza"
+                         "contenido contenido contenido"
+                         "contenido contenido contenido"
+                         "margen margen margen"
+                         "banner1 banner1 banner2 "
+                         }
+
+h1{
+    font-size: 50px;
+
+   }
+
+#cabeza {
+    left: 500px;
+}
+}
